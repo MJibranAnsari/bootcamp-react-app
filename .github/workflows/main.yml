@@ -24,14 +24,16 @@ jobs:
 
    
     - name: Install node.js
-      run: actions/setup-node@v2-beta
-       with:
+      uses: actions/setup-node@v2-beta
+      with:
         node-version: 12
-  - name: action-yarn
-  uses: comchangs/action-yarn@v0.1-beta      
+        
+   
+    - name: action-yarn
+      uses: comchangs/action-yarn@v0.1-beta      
         
 
- - name: Install Surge
+    - name: Install Surge
       run: npm install -g surge
     - name: Run Surge  
       run: surge ./build  workable-apparel1.surge.sh --token ${{secrets.SURGE_TOKEN}}
