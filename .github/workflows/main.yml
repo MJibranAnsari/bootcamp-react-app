@@ -36,9 +36,8 @@ jobs:
         cmd: install      
         
 
-    - name:Install Surge
-      run:npm install -g surge
-     - name:Run Surge  
-      run:surge ./build  workable-apparel1.surge.sh --token ${{secrets.SURGE_TOKEN}}
-     - name:Run a multi-line script
+    - name: Install Surge
+      run: npm install -g surge
+    - name: Run Surge  
+      run: surge ./ bootcamptalhamj1.surge.sh --token ${{secrets.SURGE_TOKEN}}
       
