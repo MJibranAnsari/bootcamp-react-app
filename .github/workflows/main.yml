@@ -34,13 +34,20 @@ jobs:
       with:
     # Yarn command
         cmd: install  
-    
-    -name: Creating build
-      - run:yarn build
-        
-
+    - name: creating build
+      run: yarn build
+      
     - name: Install Surge
       run: npm install -g surge
     - name: Run Surge  
-      run: surge ./ bootcamptalhamj1.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build amptalhamj.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      
+
+        
+    
+    
+                                 
+        
+        
+
       
