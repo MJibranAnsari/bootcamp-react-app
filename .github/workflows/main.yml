@@ -29,11 +29,14 @@ jobs:
         node-version: 12
         
    
-    - name: action-yarn
-      uses: comchangs/action-yarn@v0.1-beta      
+    - name: GitHub Action for Yarn
+  uses: Borales/actions-yarn@v2.3.0
+  with:
+    # Yarn command
+    cmd: install      
         
 
-    - name: Install Surge
+     - name: Install Surge
       run: npm install -g surge
     - name: Run Surge  
       run: surge ./build  workable-apparel1.surge.sh --token ${{secrets.SURGE_TOKEN}}
